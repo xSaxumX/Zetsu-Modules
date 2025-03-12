@@ -1,0 +1,50 @@
+{
+    "moduleInfo": {
+        "moduleName": "ToonGod",
+        "moduleInitials": "TG",
+        "moduleDesc": "Module for the ToonGod site",
+        "developer": "YourName",
+        "moduleID": "toongod123",
+        "moduleImage": "https://www.toongod.org/favicon.ico",
+        "moduleVersion": 1,
+        "moduleLenguage": "ENG",
+        "moduleType": "Image",
+        "baseURL": "https://www.toongod.org",
+        "moduleDeveloperSite": "https://mprotmod.github.io/Modules-KETSU/",
+        "UpdateSite": "https://your-github-repo.com/ToonGod.json"
+    },
+    "global": {
+        "variables": [],
+        "cookies": [],
+        "headers": []
+    },
+    "mainPage": [
+        {
+            "request": {
+                "url": "https://www.toongod.org/",
+                "method": "GET",
+                "headers": []
+            },
+            "extra": {},
+            "javascriptConfig": {
+                "removeJavascript": true,
+                "loadInWebView": false,
+                "javaScript": "var savedData = document.getElementById('ketsu-final-data'); var parsedJson = JSON.parse(savedData.innerHTML); let output = []; let comics = document.querySelectorAll('.list-item'); let dataList = []; comics.forEach(comic => { let img = comic.querySelector('.img-responsive').src; let title = comic.querySelector('.title a').innerText; let url = comic.querySelector('.title a').href; let genre = comic.querySelector('.genre').innerText; let updated = comic.querySelector('.updated').innerText; let chapters = comic.querySelector('.chapters').innerText; dataList.push({ 'image': { 'url': img, 'method': 'GET', 'headers': [] }, 'title': title, 'description': genre, 'field1': updated, 'field2': chapters, 'isChapter': false, 'link': { 'url': url, 'method': 'GET', 'headers': [] } }); }); output.push({ 'cellDesing': 'normal1', 'orientation': 'vertical', 'defaultLayout': 'wide', 'paging': 'leading', 'section': { 'sectionName': 'Latest Comics', 'separator': true }, 'data': dataList }); let mainPageObject = { 'request': { 'url': '', 'method': 'GET', 'headers': [] }, 'extra': {}, 'javascriptConfig': { 'removeJavascript': true, 'loadInWebView': false }, 'output': output }; savedData.innerHTML = JSON.stringify(mainPageObject);"
+            }
+        }
+    ],
+    "search": [
+        {
+            "request": {
+                "url": "https://www.toongod.org/search?query=<searched>",
+                "method": "GET",
+                "headers": []
+            },
+            "javascriptConfig": {
+                "removeJavascript": true,
+                "loadInWebView": false,
+                "javaScript": "var savedData = document.getElementById('ketsu-final-data'); var parsedJson = JSON.parse(savedData.innerHTML); let output = []; let searchResults = document.querySelectorAll('.list-item'); let dataList = []; searchResults.forEach(item => { let img = item.querySelector('.img-responsive').src; let title = item.querySelector('.title a').innerText; let url = item.querySelector('.title a').href; let genre = item.querySelector('.genre').innerText; let updated = item.querySelector('.updated').innerText; let chapters = item.querySelector('.chapters').innerText; dataList.push({ 'image': { 'url': img, 'method': 'GET', 'headers': [] }, 'title': title, 'description': genre, 'field1': updated, 'field2': chapters, 'isChapter': false, 'link': { 'url': url, 'method': 'GET', 'headers': [] } }); }); output.push({ 'cellDesing': 'normal1', 'orientation': 'vertical', 'defaultLayout': 'wide', 'paging': 'leading', 'section': { 'sectionName': 'Search Results', 'separator': true }, 'data': dataList }); let searchPageObject = { 'request': { 'url': '', 'method': 'GET', 'headers': [] }, 'extra': {}, 'javascriptConfig': { 'removeJavascript': true, 'loadInWebView': false }, 'output': output }; savedData.innerHTML = JSON.stringify(searchPageObject);"
+            }
+        }
+    ]
+}
