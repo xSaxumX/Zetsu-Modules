@@ -1,22 +1,22 @@
 {
-    "name": "ManhwaBuddy Webtoons",
-    "version": "1.0",
-    "description": "Explore a variety of Webtoons from ManhwaBuddy. All your favorite genres in one place.",
-    "url": "https://manhwabuddy.com/genre/webtoon/",
-    "image": "https://manhwabuddy.com/favicon.ico",
-    "layout": {
-        "sortBy": "chapterCount",
-        "displayStyle": "grid",
-        "itemsPerRow": 3
-    },
-    "installationSteps": [
-        "Visit the provided URL in your browser.",
-        "Select your preferred webtoon from the list.",
-        "Start reading webtoons directly from ManhwaBuddy."
-    ],
-    "sorting": {
-        "genres": "Webtoon",
-        "order": "ascending",
-        "sortByChapters": "true"
-    }
+  "name": "ManhwaBuddy Webtoons",
+  "version": "1.0",
+  "description": "Explore a variety of Webtoons from ManhwaBuddy. All your favorite genres in one place.",
+  "url": "https://manhwabuddy.com/genre/webtoon/",
+  "image": "https://manhwabuddy.com/favicon.ico",
+  "layout": {
+    "sortBy": "chapterCount",       // Sorting by the number of chapters
+    "displayStyle": "grid",         // "grid" or "list"
+    "itemsPerRow": 3               // Number of items per row in grid layout
+  },
+  "installationSteps": [
+    "Visit the provided URL in your browser.",
+    "Select your preferred webtoon from the list.",
+    "Start reading webtoons directly from ManhwaBuddy."
+  ],
+  "sorting": {
+    "genres": "Webtoon",            // Sorting by the Webtoon genre
+    "order": "ascending",          // Sorting order: "ascending" or "descending"
+    "sortByChapters": true         // Enable sorting by the number of chapters
+  }
 }
