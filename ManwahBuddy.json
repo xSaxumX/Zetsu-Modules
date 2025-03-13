@@ -5,9 +5,9 @@
   "url": "https://manhwabuddy.com/genre/webtoon/",
   "image": "https://manhwabuddy.com/favicon.ico",
   "layout": {
-    "sortBy": "chapterCount",       // Sorting by the number of chapters
-    "displayStyle": "grid",         // "grid" or "list"
-    "itemsPerRow": 3               // Number of items per row in grid layout
+    "sortBy": "chapterCount",
+    "displayStyle": "grid",
+    "itemsPerRow": 3
   },
   "installationSteps": [
     "Visit the provided URL in your browser.",
@@ -15,8 +15,8 @@
     "Start reading webtoons directly from ManhwaBuddy."
   ],
   "sorting": {
-    "genres": "Webtoon",            // Sorting by the Webtoon genre
-    "order": "ascending",          // Sorting order: "ascending" or "descending"
-    "sortByChapters": true         // Enable sorting by the number of chapters
+    "genres": "Webtoon",
+    "order": "ascending",
+    "sortByChapters": true
   }
 }
