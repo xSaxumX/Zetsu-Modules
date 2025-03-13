@@ -1,24 +1,79 @@
 {
-  "moduleData": {
-    "name": "ManhwaBuddy Webtoons",
-    "version": "1.0",
-    "description": "Explore a variety of Webtoons from ManhwaBuddy. All your favorite genres in one place.",
-    "url": "https://manhwabuddy.com/genre/webtoon/",
-    "image": "https://manhwabuddy.com/favicon.ico"
+  "moduleInfo": {
+    "moduleName": "ManhwaBuddy Webtoons",
+    "moduleInitials": "MBW",
+    "moduleDesc": "Explore a variety of Webtoons from ManhwaBuddy. All your favorite genres in one place.",
+    "developer": "Your Name",
+    "moduleID": "20250312",
+    "moduleImage": "https://manhwabuddy.com/favicon.ico",
+    "moduleVersion": 1.0,
+    "moduleLenguage": "ENG",
+    "changelog": "Initial release",
+    "moduleType": "Webtoons",
+    "baseURL": "https://manhwabuddy.com/genre/webtoon/",
+    "moduleDeveloperSite": "https://github.com/YourGitHubRepo/Zetsu-Modules",
+    "UpdateSite": "https://raw.githubusercontent.com/xSaxumX/Zetsu-Modules/main/ManwahBuddy.json",
+    "preferedServer": "",
+    "preferedDownloadServer": "",
+    "blackListed": [""]
   },
-  "layout": {
-    "sortBy": "chapterCount",
-    "displayStyle": "grid",
-    "itemsPerRow": 3
+  "global": {
+    "variables": [
+      {
+        "key": "",
+        "value": ""
+      }
+    ],
+    "cookies": [
+      {
+        "key": "",
+        "value": ""
+      }
+    ],
+    "headers": [
+      {
+        "key": "",
+        "value": ""
+      }
+    ]
   },
-  "installationSteps": [
-    "Visit the provided URL in your browser.",
-    "Select your preferred webtoon from the list.",
-    "Start reading webtoons directly from ManhwaBuddy."
-  ],
-  "sorting": {
-    "genres": "Webtoon",
-    "order": "ascending",
-    "sortByChapters": true
-  }
+  "mainPage": [
+    {
+      "request": {
+        "url": "https://manhwabuddy.com/genre/webtoon/",
+        "method": "get",
+        "headers": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ],
+        "httpBody": null
+      },
+      "extra": {
+        "commands": [
+          {
+            "commandName": "",
+            "params": [
+              {
+                "key": "",
+                "value": ""
+              }
+            ]
+          }
+        ],
+        "extraInfo": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ]
+      },
+      "javascriptConfig": {
+        "removeJavascript": true,
+        "loadInWebView": false,
+        "javaScript": "const scrapeWebtoon = () => { /* Add your scraping logic here */ };"
+      }
+    }
+  ]
 }
