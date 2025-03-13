@@ -1,21 +1,23 @@
 {
   "moduleInfo": {
-    "moduleName": "ManhwaBuddy Webtoons",
-    "moduleInitials": "MBW",
-    "moduleDesc": "Explore a variety of Webtoons from ManhwaBuddy. All your favorite genres in one place.",
-    "developer": "Your Name",
-    "moduleID": "20250312",
+    "moduleName": "ManhwaBuddy",
+    "moduleInitials": "MB",
+    "moduleDesc": "Module for ManhwaBuddy.com – a website for reading manhwa",
+    "developer": "Saxum",
+    "moduleID": "20250314",
     "moduleImage": "https://manhwabuddy.com/favicon.ico",
     "moduleVersion": 1.0,
     "moduleLenguage": "ENG",
     "changelog": "Initial release",
-    "moduleType": "Webtoons",
-    "baseURL": "https://manhwabuddy.com/genre/webtoon/",
-    "moduleDeveloperSite": "https://github.com/YourGitHubRepo/Zetsu-Modules",
-    "UpdateSite": "https://raw.githubusercontent.com/xSaxumX/Zetsu-Modules/main/ManwahBuddy.json",
+    "moduleType": "Image",
+    "baseURL": "https://manhwabuddy.com",
+    "moduleDeveloperSite": "https://github.com/Saxum",
+    "UpdateSite": "https://raw.githubusercontent.com/Saxum/ManhwaBuddyModule/master/ManhwaBuddy.json",
     "preferedServer": "",
     "preferedDownloadServer": "",
-    "blackListed": [""]
+    "blackListed": [
+      ""
+    ]
   },
   "global": {
     "variables": [
@@ -40,7 +42,7 @@
   "mainPage": [
     {
       "request": {
-        "url": "https://manhwabuddy.com/genre/webtoon/",
+        "url": "https://manhwabuddy.com/",
         "method": "get",
         "headers": [
           {
@@ -51,120 +53,94 @@
         "httpBody": null
       },
       "extra": {
-        "commands": [
-          {
-            "commandName": "helperFunction",
-            "params": [
-              {
-                "key": "isCustomRequest",
-                "value": "true"
-              }
-            ]
-          }
-        ],
-        "extraInfo": [
-          {
-            "key": "",
-            "value": ""
-          }
-        ]
+        "commands": [],
+        "extraInfo": []
       },
       "javascriptConfig": {
-        "removeJavascript": true,
-        "loadInWebView": false,
-        "javaScript": "const scrapeWebtoon = () => { /* Add your scraping logic here */ };"
-      }
+        "removeJavascript": false,
+        "loadInWebView": true,
+        "javaScript": "const DefaultLayouts = { ultraWideFull: 'ultraWideFull', ultraWide: 'ultraWide', wideFull: 'wideFull', wide: 'wide', wideStrechedFull: 'wideStrechedFull', wideStrechedFullDouble: 'WideStrechedFullDouble', wideStreched: 'wideStreched', wideStrechedDouble: 'wideStrechedDouble', wideStrechedFullList: 'wideStrechedFullList', wideStrechedList: 'wideStrechedList', doublets: 'doublets', doubletsDouble: 'doubletsDouble', doubletsFull: 'doubletsFull', doubletsFullDouble: 'doubletsFullDouble', doubletsConstant: 'doubletsConstant', doubletsDoubleConstant: 'doubletsDoubleConstant', doubletsFullConstant: 'doubletsFullConstant', doubletsFullDoubleConstant: 'doubletsFullDoubleConstant', longDoublets: 'longDoublets', longDoubletsDouble: 'longDoubletsDouble', longDoubletsFull: 'longDoubletsFull', longDoubletsFullDouble: 'longDoubletsFullDouble', longDoubletsConstant: 'longDoubletsConstant', longDoubletsDoubleConstant: 'longDoubletsDoubleConstant', longDoubletsFullConstant: 'longDoubletsFullConstant', longDoubletsFullDoubleConstant: 'longDoubletsFullDoubleConstant', triplets: 'triplets', tripletsDouble: 'tripletsDouble', tripletsFull: 'tripletsFull', tripletsFullDouble: 'tripletsFullDouble', tripletsConstant: 'tripletsConstant', tripletsDoubleConstant: 'tripletsDoubleConstant', tripletsFullConstant: 'tripletsFullConstant', tripletsFullDoubleConstant: 'tripletsFullDoubleConstant', longTriplets: 'longTriplets', longTripletsDouble: 'longTripletsDouble', longTripletsFull: 'longTripletsFull', longTripletsFullDouble: 'longTripletsFullDouble', longTripletsConstant: 'longTripletsConstant', longTripletsDoubleConstant: 'longTripletsDoubleConstant', longTripletsFullConstant: 'longTripletsFullConstant', longTripletsFullDoubleConstant: 'longTripletsFullDoubleConstant', none: ''};\n\nconst CellDesings = { Special1: 'Special1', Special2: 'Special2', Special3: 'Special3', CELLHelperText: 'CELLHelperText', small1: 'small1', small2: 'small2', normal1: 'normal1', normal2: 'normal2', normal3: 'normal3', normal4: 'normal4', normal5: 'normal5', normal6: 'normal6', normal7: 'normal7', wide1: 'wide1', wide2: 'wide2', wide3: 'wide3', wide4: 'wide4', wide5: 'wide5', wide6: 'wide6', wide7: 'wide7', wide8: 'wide8', wide9: 'wide9', wide10: 'wide10', wide11: 'wide11'};\n\nconst Paging = { leading: 'leading', centered: 'centered', none: ''};\nconst Orientation = { horizontal: 'horizontal', vertical: 'vertical'};\n\nfunction MainPage(request, extra, javascriptConfig, output) { this.request = request; this.extra = extra; this.javascriptConfig = javascriptConfig; this.output = output; }\nfunction ModuleRequest(url, method, headers, httpBody) { this.url = url; this.method = method; this.headers = headers; this.httpBody = httpBody; }\nfunction Extra(commands, extraInfo) { this.commands = commands; this.extraInfo = extraInfo; }\nfunction Commands(commandName, params) { this.commandName = commandName; this.params = params; }\nfunction JavascriptConfig(removeJavascript, loadInWebView, javaScript) { this.removeJavascript = removeJavascript; this.loadInWebView = loadInWebView; this.javaScript = javaScript; }\nfunction KeyValue(key, value) { this.key = key; this.value = value; }\nfunction Output(cellDesing, orientation, defaultLayout, paging, section, layout, data) { this.cellDesing = cellDesing; this.orientation = orientation; this.defaultLayout = defaultLayout; this.paging = paging; this.section = section; this.layout = layout; this.data = data; }\nfunction Section(sectionName, separator) { this.sectionName = sectionName; this.separator = separator; }\nfunction Layout(insets, visibleCellsWidthS, visibleCellsWidthM, visibleCellsWidthL, visibleCellsHeight, heightForVisibleCells, cellSize, ratio, constant, horizontalSpacing, verticalSpacing) { this.insets = insets; this.visibleCellsWidthS = visibleCellsWidthS; this.visibleCellsWidthM = visibleCellsWidthM; this.visibleCellsWidthL = visibleCellsWidthL; this.visibleCellsHeight = visibleCellsHeight; this.heightForVisibleCells = heightForVisibleCells; this.cellSize = cellSize; this.ratio = ratio; this.constant = constant; this.horizontalSpacing = horizontalSpacing; this.verticalSpacing = verticalSpacing; }\nfunction Insets(top, bottom, left, right) { this.top = top; this.bottom = bottom; this.left = left; this.right = right; }\nfunction Size(width, height) { this.width = width; this.height = height; }\nfunction Ratio(inRelation, number1, number2) { this.inRelation = inRelation; this.number1 = number1; this.number2 = number2; }\nfunction Data(image, title, description, field1, field2, field3, field4, isChapter, link, openInWebView) { this.image = image; this.title = title; this.description = description; this.field1 = field1; this.field2 = field2; this.field3 = field3; this.field4 = field4; this.isChapter = isChapter; this.link = link; this.openInWebView = openInWebView; }\n\n// Example extraction for main page items\nvar savedData = document.getElementById('ketsu-final-data');\nvar parsedJson = JSON.parse(savedData.innerHTML);\nlet output = [];\nlet emptyKeyValue = [new KeyValue('', '')];\n\n// Adjust the selector as needed for manhwabuddy.com\nconst items = Array.from(document.querySelectorAll('.manhwa-list .item'));\n\nconst popular = items.map(item => {\n  let title = item.querySelector('.title').textContent.trim();\n  let link = item.querySelector('a').href;\n  let image = item.querySelector('img').src;\n  return new Data(new ModuleRequest(image, 'get', emptyKeyValue, null), title, '', '', '', '', '', false, new ModuleRequest(link, 'get', emptyKeyValue, null));\n});\n\noutput.push(new Output(CellDesings.normal1, Orientation.vertical, DefaultLayouts.wide, Paging.leading, new Section('Popular Manhwa', true), null, popular));\n\nlet MainPageObject = new MainPage(new ModuleRequest('', 'get', emptyKeyValue, null), new Extra([], emptyKeyValue), new JavascriptConfig(false, true, ''), output);\nvar finalJson = JSON.stringify(MainPageObject);\nsavedData.innerHTML = finalJson;"
+      },
+      "output": [
+        {
+          "cellDesing": "normal1",
+          "orientation": "vertical",
+          "defaultLayout": "wide",
+          "paging": "",
+          "section": {
+            "sectionName": "Popular Manhwa",
+            "separator": true
+          },
+          "layout": {
+            "insets": {
+              "top": 0,
+              "bottom": 0,
+              "left": 0,
+              "right": 0
+            },
+            "visibleCellsWidthS": 2,
+            "visibleCellsWidthM": 2,
+            "visibleCellsWidthL": 2,
+            "visibleCellsHeight": 2,
+            "heightForVisibleCells": 400,
+            "cellSize": {
+              "width": 300,
+              "height": 300
+            },
+            "ratio": {
+              "inRelation": "width",
+              "number1": 1,
+              "number2": 2
+            },
+            "constant": {
+              "width": 1,
+              "height": 2
+            },
+            "horizontalSpacing": 0,
+            "verticalSpacing": 0
+          },
+          "data": [
+            {
+              "image": {
+                "url": "",
+                "method": "get",
+                "headers": [
+                  {
+                    "key": "",
+                    "value": ""
+                  }
+                ],
+                "httpBody": null
+              },
+              "title": "",
+              "description": "",
+              "field1": "",
+              "field2": "",
+              "field3": "",
+              "field4": "",
+              "openInWebView": false,
+              "isChapter": false,
+              "link": {
+                "url": "",
+                "method": "",
+                "headers": [
+                  {
+                    "key": "",
+                    "value": ""
+                  }
+                ],
+                "httpBody": null
+              }
+            }
+          ]
+        }
+      ]
     }
   ],
-  "layouts": {
-    "DefaultLayouts": {
-      "ultraWideFull": "ultraWideFull",
-      "ultraWide": "ultraWide",
-      "wideFull": "wideFull",
-      "wide": "wide",
-      "wideStrechedFull": "wideStrechedFull",
-      "wideStrechedFullDouble": "WideStrechedFullDouble",
-      "wideStreched": "wideStreched",
-      "wideStrechedDouble": "wideStrechedDouble",
-      "wideStrechedFullList": "wideStrechedFullList",
-      "wideStrechedList": "wideStrechedList",
-      "doublets": "doublets",
-      "doubletsDouble": "doubletsDouble",
-      "doubletsFull": "doubletsFull",
-      "doubletsFullDouble": "doubletsFullDouble",
-      "doubletsConstant": "doubletsConstant",
-      "doubletsDoubleConstant": "doubletsDoubleConstant",
-      "doubletsFullConstant": "doubletsFullConstant",
-      "doubletsFullDoubleConstant": "doubletsFullDoubleConstant",
-      "longDoublets": "longDoublets",
-      "longDoubletsDouble": "longDoubletsDouble",
-      "longDoubletsFull": "longDoubletsFull",
-      "longDoubletsFullDouble": "longDoubletsFullDouble",
-      "longDoubletsConstant": "longDoubletsConstant",
-      "longDoubletsDoubleConstant": "longDoubletsDoubleConstant",
-      "longDoubletsFullConstant": "longDoubletsFullConstant",
-      "longDoubletsFullDoubleConstant": "longDoubletsFullDoubleConstant",
-      "triplets": "triplets",
-      "tripletsDouble": "tripletsDouble",
-      "tripletsFull": "tripletsFull",
-      "tripletsFullDouble": "tripletsFullDouble",
-      "tripletsConstant": "tripletsConstant",
-      "tripletsDoubleConstant": "tripletsDoubleConstant",
-      "tripletsFullConstant": "tripletsFullConstant",
-      "tripletsFullDoubleConstant": "tripletsFullDoubleConstant",
-      "longTriplets": "longTriplets",
-      "longTripletsDouble": "longTripletsDouble",
-      "longTripletsFull": "longTripletsFull",
-      "longTripletsFullDouble": "longTripletsFullDouble",
-      "longTripletsConstant": "longTripletsConstant",
-      "longTripletsDoubleConstant": "longTripletsDoubleConstant",
-      "longTripletsFullConstant": "longTripletsFullConstant",
-      "longTripletsFullDoubleConstant": "longTripletsFullDoubleConstant"
-    },
-    "CellDesings": {
-      "Special1": "Special1",
-      "Special2": "Special2",
-      "Special3": "Special3",
-      "CELLHelperText": "CELLHelperText",
-      "small1": "small1",
-      "small2": "small2",
-      "normal1": "normal1",
-      "normal2": "normal2",
-      "normal3": "normal3",
-      "normal4": "normal4",
-      "normal5": "normal5",
-      "normal6": "normal6",
-      "normal7": "normal7",
-      "wide1": "wide1",
-      "wide2": "wide2",
-      "wide3": "wide3",
-      "wide4": "wide4",
-      "wide5": "wide5",
-      "wide6": "wide6",
-      "wide7": "wide7",
-      "wide8": "wide8",
-      "wide9": "wide9",
-      "wide10": "wide10",
-      "wide11": "wide11"
-    },
-    "Paging": {
-      "leading": "leading",
-      "centered": "centered",
-      "none": ""
-    },
-    "Orientation": {
-      "horizontal": "horizontal",
-      "vertical": "vertical"
-    },
-    "RatioRelation": {
-      "width": "width",
-      "height": "height"
-    }
-  },
   "search": [
     {
       "request": {
-        "url": "https://manhwabuddy.com/page/<page>/?s=<searched>",
+        "url": "https://manhwabuddy.com/search?q=<searched>&page=<page>",
         "method": "get",
         "headers": [
           {
@@ -176,24 +152,317 @@
       },
       "separator": "+",
       "extra": {
-        "commands": [
-          {
-            "commandName": "helperFunction",
-            "params": [
-              {
-                "key": "isCustomRequest",
-                "value": "true"
+        "commands": [],
+        "extraInfo": []
+      },
+      "javascriptConfig": {
+        "removeJavascript": true,
+        "loadInWebView": false,
+        "javaScript": "// Example search extraction for manhwabuddy.com\nvar savedData = document.getElementById('ketsu-final-data');\nvar parsedJson = JSON.parse(savedData.innerHTML);\nlet emptyKeyValue = [new KeyValue('', '')];\nlet output = [];\n\nconst results = Array.from(document.querySelectorAll('.search-results .item'));\n\nconst searchData = results.map(item => {\n  let title = item.querySelector('.title').textContent.trim();\n  let link = item.querySelector('a').href;\n  let image = item.querySelector('img').src;\n  return new Data(new ModuleRequest(image, 'get', emptyKeyValue, null), title, '', '', '', '', '', false, new ModuleRequest(link, 'get', emptyKeyValue, null));\n});\n\noutput.push(new Output(CellDesings.normal1, Orientation.vertical, DefaultLayouts.wide, Paging.leading, new Section('Search Results', true), null, searchData));\n\nlet searchPageObject = new Search(new ModuleRequest('', 'get', emptyKeyValue, null), new Extra([], emptyKeyValue), '', new JavascriptConfig(false, false, ''), output);\nvar finalJson = JSON.stringify(searchPageObject);\nsavedData.innerHTML = finalJson;"
+      },
+      "output": [
+        {
+          "cellDesing": "normal1",
+          "orientation": "vertical",
+          "defaultLayout": "wide",
+          "paging": "",
+          "section": {
+            "sectionName": "Search Results",
+            "separator": true
+          },
+          "layout": {
+            "insets": {
+              "top": 0,
+              "bottom": 0,
+              "left": 0,
+              "right": 0
+            },
+            "visibleCellsWidthS": 2,
+            "visibleCellsWidthM": 2,
+            "visibleCellsWidthL": 2,
+            "visibleCellsHeight": 2,
+            "heightForVisibleCells": 400,
+            "cellSize": {
+              "width": 300,
+              "height": 300
+            },
+            "ratio": {
+              "inRelation": "width",
+              "number1": 1,
+              "number2": 2
+            },
+            "constant": {
+              "width": 1,
+              "height": 2
+            },
+            "horizontalSpacing": 0,
+            "verticalSpacing": 0
+          },
+          "data": [
+            {
+              "image": {
+                "url": "",
+                "method": "get",
+                "headers": [
+                  {
+                    "key": "",
+                    "value": ""
+                  }
+                ],
+                "httpBody": null
+              },
+              "title": "",
+              "description": "",
+              "field1": "",
+              "field2": "",
+              "field3": "",
+              "field4": "",
+              "openInWebView": false,
+              "isChapter": false,
+              "link": {
+                "url": "",
+                "method": "",
+                "headers": [
+                  {
+                    "key": "",
+                    "value": ""
+                  }
+                ],
+                "httpBody": null
               }
-            ]
-          }
-        ],
-        "extraInfo": [
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "info": [
+    {
+      "request": {
+        "url": "https://manhwabuddy.com/manga/<slug>",
+        "method": "get",
+        "headers": [
           {
             "key": "",
             "value": ""
           }
+        ],
+        "httpBody": null
+      },
+      "extra": {
+        "commands": [],
+        "extraInfo": []
+      },
+      "javascriptConfig": {
+        "removeJavascript": false,
+        "loadInWebView": false,
+        "javaScript": "function Info(request, extra, javascriptConfig, output) { this.request = request; this.extra = extra; this.javascriptConfig = javascriptConfig; this.output = output; }\nfunction ModuleRequest(url, method, headers, httpBody) { this.url = url; this.method = method; this.headers = headers; this.httpBody = httpBody; }\nfunction Extra(commands, extraInfo) { this.commands = commands; this.extraInfo = extraInfo; }\nfunction Commands(commandName, params) { this.commandName = commandName; this.params = params; }\nfunction JavascriptConfig(removeJavascript, loadInWebView, javaScript) { this.removeJavascript = removeJavascript; this.loadInWebView = loadInWebView; this.javaScript = javaScript; }\nfunction KeyValue(key, value) { this.key = key; this.value = value; }\nfunction Chapter(chapName, link, openInWebView) { this.chapName = chapName; this.link = link; this.openInWebView = openInWebView; }\nfunction Output(image, title, link, description, genres, field1, field2, field3, field4, chapters) { this.image = image; this.title = title; this.link = link; this.description = description; this.genres = genres; this.field1 = field1; this.field2 = field2; this.field3 = field3; this.field4 = field4; this.chapters = chapters; }\nfunction cleanText(text) { return text.replace(/[\\n\\t]/g, '').trim(); }\nfunction cleanUrl(url) { return 'https://manhwabuddy.com' + url.trim(); }\nfunction quickRequest(url, flag) { return flag === 1 ? new ModuleRequest(cleanUrl(url), 'get', [new KeyValue('', '')], null) : new ModuleRequest(url, 'get', [new KeyValue('', '')], null); }\n\nvar savedData = document.getElementById('ketsu-final-data');\nvar parsedJson = JSON.parse(savedData.innerHTML);\nlet emptyKeyValue = [new KeyValue('', '')];\n\nvar title = document.querySelector('.manga-title').textContent.trim();\nvar image = document.querySelector('.manga-cover img').src;\nvar synopsis = document.querySelector('.manga-description').textContent.trim();\nvar genres = Array.from(document.querySelectorAll('.manga-genres a')).map(e => e.textContent.trim());\n\nvar chapterNodes = document.querySelectorAll('.chapter-list li');\nvar chapters = Array.from(chapterNodes).map(chap => {\n  let chapTitle = chap.querySelector('a').textContent.trim();\n  let chapLink = chap.querySelector('a').href;\n  return new Chapter(chapTitle, quickRequest(chapLink, 0), false);\n}).reverse();\n\nlet infoPageObject = new Info(\n  new ModuleRequest('', 'get', emptyKeyValue, null),\n  new Extra([], emptyKeyValue),\n  new JavascriptConfig(false, false, ''),\n  new Output(new ModuleRequest(image, 'get', emptyKeyValue, null), title, parsedJson.request, synopsis, genres, '', '', '', '', 'Chapters: ' + chapters.length, chapters)\n);\n\nsavedData.innerHTML = JSON.stringify(infoPageObject);"
+      },
+      "output": {
+        "image": {
+          "url": "",
+          "method": "get",
+          "headers": [
+            {
+              "key": "",
+              "value": ""
+            }
+          ],
+          "httpBody": null
+        },
+        "link": {
+          "url": "",
+          "method": "get",
+          "headers": [
+            {
+              "key": "",
+              "value": ""
+            }
+          ],
+          "httpBody": null
+        },
+        "title": "",
+        "description": "",
+        "genres": [
+          ""
+        ],
+        "field1": "",
+        "field2": "",
+        "field3": "",
+        "field4": "",
+        "chapters": [
+          {
+            "chapName": "",
+            "openInWebView": false,
+            "link": {
+              "url": "empty",
+              "method": "get",
+              "headers": [
+                {
+                  "key": "key",
+                  "value": "value"
+                }
+              ],
+              "httpBody": null
+            }
+          }
         ]
       }
+    }
+  ],
+  "chapters": [
+    {
+      "request": {
+        "url": "https://manhwabuddy.com/manga/<slug>/chapter-<num>",
+        "method": "get",
+        "headers": [
+          {
+            "key": "",
+            "value": ""
+          }
+        ],
+        "httpBody": null
+      },
+      "extra": {
+        "commands": [],
+        "extraInfo": []
+      },
+      "javascriptConfig": {
+        "removeJavascript": false,
+        "loadInWebView": false,
+        "javaScript": "function Chapters(request, extra, javascriptConfig, output) { this.request = request; this.extra = extra; this.javascriptConfig = javascriptConfig; this.output = output; }\nfunction ModuleRequest(url, method, headers, httpBody) { this.url = url; this.method = method; this.headers = headers; this.httpBody = httpBody; }\nfunction Extra(commands, extraInfo) { this.commands = commands; this.extraInfo = extraInfo; }\nfunction Commands(commandName, params) { this.commandName = commandName; this.params = params; }\nfunction JavascriptConfig(removeJavascript, loadInWebView, javaScript) { this.removeJavascript = removeJavascript; this.loadInWebView = loadInWebView; this.javaScript = javaScript; }\nfunction KeyValue(key, value) { this.key = key; this.value = value; }\nfunction Package(images) { this.images = images; }\n\nvar savedData = document.getElementById('ketsu-final-data');\nvar parsedJson = JSON.parse(savedData.innerHTML);\nlet emptyKeyValue = [new KeyValue('', '')];\n\nvar images = Array.from(document.querySelectorAll('.reader-images img')).map(img => new ModuleRequest(img.src, 'get', emptyKeyValue, null));\n\nlet chaptersObject = new Chapters(\n  new ModuleRequest('', 'get', emptyKeyValue, null),\n  new Extra([], emptyKeyValue),\n  new JavascriptConfig(false, false, ''),\n  new Package(images)\n);\n\nsavedData.innerHTML = JSON.stringify(chaptersObject);"
+      },
+      "output": {
+        "images": [
+          {
+            "url": "empty",
+            "method": "get",
+            "headers": [
+              {
+                "key": "",
+                "value": ""
+              }
+            ],
+            "httpBody": null
+          }
+        ]
+      }
+    }
+  ],
+  "moduleResolvers": [
+    {
+      "resolverInfo": {
+        "resolverName": "Default Resolver",
+        "nameMatches": [
+          "manhwabuddy"
+        ],
+        "developer": "Saxum",
+        "moduleID": "20250314",
+        "resolverVersion": 1,
+        "baseURL": "https://manhwabuddy.com"
+      },
+      "resolver": [
+        {
+          "request": {
+            "url": "https://manhwabuddy.com/video/example.mp4",
+            "method": "get",
+            "headers": [
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              }
+            ],
+            "httpBody": null
+          },
+          "extra": {
+            "commands": [],
+            "extraInfo": []
+          },
+          "javascriptConfig": {
+            "removeJavascript": false,
+            "loadInWebView": false,
+            "javaScript": ""
+          },
+          "output": {
+            "moduleID": "",
+            "video": [
+              {
+                "videoQuality": "720",
+                "videoLink": {
+                  "url": "https://manhwabuddy.com/video/example.mp4",
+                  "method": "get",
+                  "headers": [
+                    {
+                      "key": "User-Agent",
+                      "value": "Mozilla/5.0"
+                    }
+                  ],
+                  "httpBody": null
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "responseCodeFunctions": [
+    {
+      "code": 0,
+      "msgTitle": "Error",
+      "msgBody": "An error occurred. Please try again.",
+      "type": "normal",
+      "functions": [
+        {
+          "request": {
+            "url": "empty",
+            "method": "get",
+            "headers": [
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              }
+            ],
+            "httpBody": null
+          },
+          "extra": {
+            "commands": [],
+            "extraInfo": []
+          },
+          "javascriptConfig": {
+            "removeJavascript": true,
+            "loadInWebView": false,
+            "javaScript": ""
+          }
+        }
+      ]
+    }
+  ],
+  "helperFunctions": [
+    {
+      "functionName": "exampleCaptcha",
+      "msgTitle": "RECAPTCHA",
+      "msgBody": "Please validate the recaptcha then click Done.",
+      "type": "captcha",
+      "functions": [
+        {
+          "request": {
+            "url": "empty",
+            "method": "get",
+            "headers": [
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0"
+              }
+            ],
+            "httpBody": null
+          },
+          "extra": {
+            "commands": [],
+            "extraInfo": []
+          }
+        }
+      ]
     }
   ]
 }
